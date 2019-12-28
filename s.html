@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>상벌점 부여</title>
+    <style>
+    .good_reason, .bad_reason{
+        display: none;
+    }
+    </style>
+    <script type="text/javascript" src="./분석/jquery.js"></script>
+    <script>
+    $(function(){
+        $('#good_or_bad').change(function() {
+        var state = $('#good_or_bad option:selected').val();
+        console.log(state);
+        console.log("무엇");
+        if ( state == 'good' ) {
+            $('.good_reason').show();
+        } else {
+            $('.bad_reason').show();
+        }
+    });
+    });
+    </script>
+</head>
+<body>
+    <form action="">
+        <a>학번</a> <input type="text"/> <br/>
+        <select id="good_or_bad" name="good_or_bad">
+            <option value="" selected="selected">선택</option>
+            <option value="good">상점</option>
+            <option value="bad">벌점</option>
+        </select></br>
+        <div class="good_reason">
+            <a>사유</a>
+            <select>
+                <option>청소</option>
+                <option>선행</option>
+            </select>
+        </div>
+        <div class="bad_reason">
+            <a>사유</a>
+            <select>
+                <option>통금시간 위반</option>
+                <option>소음</option>
+            </select>
+        </div>
+    </br>
+    <input type="submit" value="부여"/>
+    <input type="button" value="취소" onclick='window.close();'/>
+    </form>
+</body>
+</html>
